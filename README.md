@@ -80,6 +80,26 @@ output_dir/
 ------
 
 ### 04 Structural annotation of the tick genome by EGAPx
+
+```bash
+mamba create -n egapx -c bioconda python pyyaml nextflow
+
+mamba activate egapx
+```
+```bash
+singularity pull docker://ncbi/egapx:0.3.1-alpha
+```
+git clone https://github.com/ncbi/egapx.git
+
+python ui/egapx.py -dl -lc ../local_cache
+
+python ~/software/egapx-0.3.1-alpha/ui/egapx.py dmel.yaml -e singularity -w anno -o out -lc /data/home/insectbase/database/egapx_db
+
+echo "process.container = '/data/home/insectbase/software/docker/egapx.sif'" >> egapx_config/singularity.config
+
+python ~/software/egapx-0.3.1-alpha/ui/egapx.py dmel.yaml -e singularity -w anno -o out -lc /data/home/insectbase/database/egapx_db
+
+
 ------
 ### 05 Standardized annotation of Tick-Borne Bacterial Genomes by Bakta
 - genome.fna
