@@ -103,6 +103,7 @@ Clone the EGAPx repo:
 git clone https://github.com/ncbi/egapx.git
 cd egapx
 ```
+
 download the required database:
 ```bash
 cd egapx
@@ -122,7 +123,6 @@ rsync --copy-links --recursive --times --verbose rsync://ftp.ncbi.nlm.nih.g
 
 Input to EGAPx is in the form of a YAML file. 
 - The following are the _required_ key-value pairs for the input file:
-
   ```shell
   genome: path to assembled genome in FASTA format
   taxid: NCBI Taxonomy identifier of the target organism 
@@ -139,8 +139,39 @@ echo "process.container = '/path_to_/egapx_0.3.2-alpha.sif'" >> egapx_config/bio
   ```
 
   ```bash
-python ./egapx/ui/egapx.py input_tick.yaml -e singularity -w anno -o egapx_output -lc ./egapx/local_cache
+python3 ./egapx/ui/egapx.py input_tick.yaml -e singularity -w anno -o egapx_output -lc ./egapx/local_cache
   ```
+
+Output:
+Look at the output in the out diectory (`example_out`) that was supplied in the command line. The annotation file is called `complete.genomic.gff`. 
+```shell
+annot_builder_output
+annotated_genome.asn
+annotation_data.cmt
+complete.cds.fna
+complete.genomic.fna
+complete.genomic.gff
+complete.genomic.gtf
+complete.proteins.faa
+complete.transcripts.fna
+nextflow.log
+resume.sh
+run.report.html
+run.timeline.html
+run.trace.txt
+run_params.yaml
+stats
+validated
+```
+Description of the outputs:
+* `complete.genomic.gff`: final annotation set in GFF3 format.
+* `complete.genomic.gtf`: final annotation set in GTF format.
+* `complete.genomic.fna`: full genome sequences set in FASTA format.
+* `complete.genomic.gtf`: final annotation set in gtf format.
+* `complete.cds.fna`: annotated Coding DNA Sequences (CDS) in FASTA format.
+* `complete.transcripts.fna`: annotated transcripts in FASTA format (includes UTRs).
+* `complete.proteins.faa`: annotated protein products in FASTA format.
+* `annotated_genome.asn`: final annotation set in ASN1 format.
 ------
 ### 05 Standardized annotation of Tick-Borne Bacterial Genomes by Bakta
 - genome.fna
