@@ -78,7 +78,11 @@ output_dir/
 
 ### 04 Structural annotation of the tick genome by EGAPx
 ------
-### 05 Automated annotation of Tick-Borne Bacterial Genomes by Bakta
+### 05 Standardized annotation of Tick-Borne Bacterial Genomes by Bakta
+- genome.fna
+- db-light
+
+If required, or desired, the AMRfinderPlus-DB can also be updated manually: 
 ```bash
 mkdir -p db-light/amrfinderplus-db
 ```
@@ -88,9 +92,12 @@ amrfinder_update --force_update --database db-light/amrfinderplus-db/
 ```bash
 bakta --db ./db-light --output ./bakta_output ./bacteriadb/genome.fna
 ```
-
+It provides dbxref-rich, sORF-including and taxon-independent annotations in machine-readable JSON & bioinformatics standard file formats for automated downstream analysis.
 ------
 
 ### 06 Automated annotation of Tick-Borne Virus Genomes by geNomad
+- genome.fna
+- genomad_db
+
 ```bash
 genomad end-to-end --cleanup --splits 8 ./virusdb/genome.fna.gz ./genomad_output ./genomad_db
