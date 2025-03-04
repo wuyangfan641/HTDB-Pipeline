@@ -88,12 +88,17 @@ output_dir/
 ------
 
 ### 04 Structural annotation of the tick genome by EGAPx
+- input_tick.yaml
+- egapx_0.3.2-alpha.sif
+- local_cache
 
+create a environment called egapx:
 ```bash
 mamba create -n egapx -c bioconda python pyyaml nextflow
-
 mamba activate egapx
 ```
+
+download the required mirror:
 ```bash
 singularity pull docker://docker.1ms.run/ncbi/egapx:0.3.2-alpha
 ```
@@ -121,8 +126,7 @@ rsync --copy-links --recursive --times --verbose rsync://ftp.ncbi.nlm.nih.g
 rsync --copy-links --recursive --times --verbose rsync://ftp.ncbi.nlm.nih.gov/genomes/TOOLS/EGAP/support_data/misc/2 misc/
 ```
 
-Input to EGAPx is in the form of a YAML file. 
-- The following are the _required_ key-value pairs for the input file:
+Input to EGAPx is in the form of a YAML file. The following are the _required_ key-value pairs for the input file:
   ```shell
   genome: path to assembled genome in FASTA format
   taxid: NCBI Taxonomy identifier of the target organism 
