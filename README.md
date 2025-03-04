@@ -101,7 +101,6 @@ singularity pull docker://docker.1ms.run/ncbi/egapx:0.3.2-alpha
 Clone the EGAPx repo:
 ```bash
 git clone https://github.com/ncbi/egapx.git
-cd egapx
 ```
 
 download the required database:
@@ -109,6 +108,7 @@ download the required database:
 cd egapx
 python ui/egapx.py -dl -lc ../local_cache
 ```
+or download it mannually:
 ```shell
 mkdir local_cache
 cd local_cache
