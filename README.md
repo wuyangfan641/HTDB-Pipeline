@@ -44,6 +44,7 @@ checkm2 predict --threads 16 --input ./bacteriadb --database_path ./CheckM2_data
 ### 3. Repeat annotation and genome mask
 #### 3.1 EDTA 
 - genome.fna
+
 You got a genome and you want to get a high-quality TE annotation:
 ```bash
 perl EDTA.pl --genome ../tickdb/genome.fna --step all --overwrite 1 -t 12 --sensitive 1 --anno 1 --force 1 evaluate 1
