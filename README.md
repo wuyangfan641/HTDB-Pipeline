@@ -57,8 +57,8 @@ You got a genome and you want to get a high-quality TE annotation:
 ```bash
 perl EDTA.pl --genome ../tickdb/genome.fna --step all --overwrite 1 -t 12 --sensitive 1 --anno 1 --force 1 evaluate 1
 ```
+Convert hard masking into soft masking:
 ```bash
-# Using EDTA to convert hard masking into soft masking
 perl ./util/make_masked.pl -genome genome.fna -minlen 80 -hardmask 0 -t 10 -rmout genome.fna.mod.EDTA.TEanno.out
 ```
 #### 3.2 HiTE
@@ -92,13 +92,13 @@ output_dir/
 - egapx_0.3.2-alpha.sif
 - local_cache
 
-create a environment called egapx:
+Create a environment called egapx:
 ```bash
 mamba create -n egapx -c bioconda python pyyaml nextflow
 mamba activate egapx
 ```
 
-download the required mirror:
+Download the required mirror:
 ```bash
 singularity pull docker://docker.1ms.run/ncbi/egapx:0.3.2-alpha
 ```
@@ -108,7 +108,7 @@ Clone the EGAPx repo:
 git clone https://github.com/ncbi/egapx.git
 ```
 
-download the required database:
+Download the required database:
 ```bash
 cd egapx
 python ui/egapx.py -dl -lc ../local_cache
