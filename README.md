@@ -12,6 +12,7 @@
 + arachnida_odb10 (https://busco-data.ezlab.org/v5/data/lineages/arachnida_odb10.2024-01-08.tar.gz)
 + db-light (https://zenodo.org/record/7669534/files/db-light.tar.gz?download=1)
 + genomad_db (https://portal.nersc.gov/genomad/__data__/genomad_db_v1.9.tar.gz)
++ checkm2_database (https://zenodo.org/api/files/fd3bc532-cd84-4907-b078-2e05a1e46803/checkm2_database.tar.gz)
 
 
 ### 02 Genome assessment
