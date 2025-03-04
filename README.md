@@ -3,7 +3,9 @@
 ### 01 Prerequisites
 #### 1.1 Software
 + BUSCO (https://busco.ezlab.org/) (compleasm(https://github.com/huangnengCSU/compleasm), compleasm: a faster and more accurate reimplementation of BUSCO)
++ CheckM2 (https://github.com/chklovski/checkm2)
 + HiTE (https://github.com/CSU-KangHu/HiTE)
++ egapx (https://github.com/ncbi/egapx)
 + Bakta (https://github.com/oschwengers/bakta)
 + geNomad (https://github.com/apcamargo/genomad)
 
@@ -43,6 +45,8 @@ You can give it a folder with FASTA files using --input and direct its output wi
 ```bash
 checkm2 predict --threads 16 --input ./bacteriadb --database_path ./CheckM2_database/uniref100.KO.1.dmnd --output_directory ./checkm2_output
 ```
+By default, the output folder will have a tab-delimited file `quality_report.tsv` containing the completeness and contamination information for each bin. You can also print the results to stdout by passing the `--stdout` option to `checkm predict`.
+
 ------
 
 ### 3. Repeat annotation and genome mask
