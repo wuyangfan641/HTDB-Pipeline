@@ -36,6 +36,10 @@ Note: the organization of the lineage file downloaded by compleasm is different 
 #### 2.3 CheckM2
 - bacteriadb/
 - checkm2_database
+
+The main use of CheckM2 is to predict the completeness and contamination of metagenome-assembled genomes (MAGs) and single-amplified genomes (SAGs), although it can also be applied to isolate genomes.
+
+You can give it a folder with FASTA files using --input and direct its output with --output-directory:
 ```bash
 checkm2 predict --threads 16 --input ./bacteriadb --database_path ./CheckM2_database/uniref100.KO.1.dmnd --output_directory ./checkm2_output
 ```
