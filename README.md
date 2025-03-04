@@ -49,7 +49,7 @@ By default, the output folder will have a tab-delimited file `quality_report.tsv
 
 ------
 
-### 3. Repeat annotation and genome mask
+### 03 Repeat annotation and genome mask
 #### 3.1 EDTA 
 - genome.fna
 
@@ -95,19 +95,52 @@ mamba create -n egapx -c bioconda python pyyaml nextflow
 mamba activate egapx
 ```
 ```bash
-singularity pull docker://ncbi/egapx:0.3.1-alpha
+singularity pull docker://docker.1ms.run/ncbi/egapx:0.3.2-alpha
 ```
+
+Clone the EGAPx repo:
+```bash
 git clone https://github.com/ncbi/egapx.git
-
+cd egapx
+```
+download the required database:
+```bash
+cd egapx
 python ui/egapx.py -dl -lc ../local_cache
+```
+```shell
+mkdir local_cache
+cd local_cache
+mkdir gnomon ortholog_references target_proteins taxonomy reference_sets misc
+rsync --copy-links --recursive --times --verbose rsync://ftp.ncbi.nlm.nih.gov/genomes/TOOLS/EGAP/support_data/gnomon/2 gnomon/
+rsync --copy-links --recursive --times --verbose rsync://ftp.ncbi.nlm.nih.gov/genomes/TOOLS/EGAP/support_data/ortholog_references/2 ortholog_references/
+rsync --copy-links --recursive --times --verbose rsync://ftp.ncbi.nlm.nih.gov/genomes/TOOLS/EGAP/support_data/target_proteins/2 target_proteins/
+rsync --copy-links --recursive --times --verbose rsync://ftp.ncbi.nlm.nih.gov/genomes/TOOLS/EGAP/support_data/taxonomy/1 taxonomy/
+rsync --copy-links --recursive --times --verbose rsync://ftp.ncbi.nlm.nih.gov/genomes/TOOLS/EGAP/support_data/reference_sets/2 reference_sets/
+rsync --copy-links --recursive --times --verbose rsync://ftp.ncbi.nlm.nih.gov/genomes/TOOLS/EGAP/support_data/misc/2 misc/
+```
 
-python ~/software/egapx-0.3.1-alpha/ui/egapx.py dmel.yaml -e singularity -w anno -o out -lc /data/home/insectbase/database/egapx_db
+Input to EGAPx is in the form of a YAML file. 
+- The following are the _required_ key-value pairs for the input file:
 
-echo "process.container = '/data/home/insectbase/software/docker/egapx.sif'" >> egapx_config/singularity.config
+  ```shell
+  genome: path to assembled genome in FASTA format
+  taxid: NCBI Taxonomy identifier of the target organism 
+  reads: RNA-seq data
+  ```
 
-python ~/software/egapx-0.3.1-alpha/ui/egapx.py dmel.yaml -e singularity -w anno -o out -lc /data/home/insectbase/database/egapx_db
+Run EGAPx:
+  ```bash
+python3 ./egapx/ui/egapx.py input_tick.yaml -e singularity -w anno -o egapx_output -lc ./egapx/local_cache
+  ```
 
+  ```bash
+echo "process.container = '/path_to_/egapx_0.3.2-alpha.sif'" >> egapx_config/biowulf_cluster.config
+  ```
 
+  ```bash
+python ./egapx/ui/egapx.py input_tick.yaml -e singularity -w anno -o egapx_output -lc ./egapx/local_cache
+  ```
 ------
 ### 05 Standardized annotation of Tick-Borne Bacterial Genomes by Bakta
 - genome.fna
