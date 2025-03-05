@@ -4,6 +4,7 @@
 #### 1.1 Software
 + BUSCO (https://busco.ezlab.org/) (compleasm(https://github.com/huangnengCSU/compleasm), compleasm: a faster and more accurate reimplementation of BUSCO)
 + CheckM2 (https://github.com/chklovski/checkm2)
++ EDTA (https://github.com/oushujun/EDTA)
 + HiTE (https://github.com/CSU-KangHu/HiTE)
 + egapx (https://github.com/ncbi/egapx)
 + Bakta (https://github.com/oschwengers/bakta)
@@ -16,6 +17,7 @@
 + genomad_db (https://portal.nersc.gov/genomad/__data__/genomad_db_v1.9.tar.gz)
 + checkm2_database (https://zenodo.org/api/files/fd3bc532-cd84-4907-b078-2e05a1e46803/checkm2_database.tar.gz)
 
+------
 
 ### 02 Genome assessment
 #### 2.1 BUSCO v5.6.0
@@ -211,4 +213,3 @@ geNomad works by executing a series of modules sequentially , but we provide a c
 genomad end-to-end --cleanup --splits 8 ./virusdb/genome.fna.gz ./genomad_output ./genomad_db
 ```
 The results will be written inside the genomad_output directory.
-genomad end-to-end --cleanup --splits 8 ./virusdb/genome.fna.gz ./genomad_output ./genomad_db
