@@ -28,7 +28,7 @@
 busco -i ./tickdb/genome.fna -l ./arachnida_odb10 -o ./busco_output -m genome --cpu 12 --offline
 ```
 ```bash
-cat ./output_dir/short_summary.specific.arachnida_odb10.out.txt
+cat ./busco_output/short_summary.specific.arachnida_odb10.out.txt
 ```
 or you can try compleasm, a faster and more accurate reimplementation of BUSCO
 #### 2.2 compleasm
@@ -90,6 +90,7 @@ output_dir/
 ------
 
 ### 04 Structural annotation of the tick genome by EGAPx
+- genomes.rename.fa.masked
 - input_tick.yaml
 - egapx_0.3.2-alpha.sif
 - local_cache
