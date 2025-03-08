@@ -8,7 +8,7 @@ def extract_gca(ftp_link):
 
 # 构建GCA编号到FTP链接的映射字典
 gca_mapping = {}
-with open('ftp.txt', 'r') as f:
+with open('fna_ftp.txt', 'r') as f:
     for line in f:
         ftp_link = line.strip()
         gca_number = extract_gca(ftp_link)
