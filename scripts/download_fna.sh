@@ -20,18 +20,22 @@ while IFS=$' \t' read -r species url || [[ -n "$species" ]]; do
     # 跳过空行和注释行
     [[ -z "$species" || "$species" == \#* ]] && continue
     
+    # 清理特殊字符（关键修复步骤）
+    species=$(echo "$species" | tr -d '\r\n')  # 移除物种名中的回车/换行
+    url=$(echo "$url" | tr -d '\r\n')          # 移除URL中的回车/换行
+
     # 提取文件名并处理扩展名
     filename=$(basename "$url")
     if [[ "$filename" == *.* ]]; then
-        extension="${filename: -6}"
-        new_name="${species}.${extension}"
+        extension=".${filename#*.}"
+        new_name="${species}${extension}"
     else
         new_name="$species"
     fi
 
     # 下载文件
     echo -n "下载 $species... "
-    if wget -q --show-progress -O "$new_name" "$url"; then
+    if wget --show-progress -O "$new_name" "$url"; then
         echo "保存为 $new_name"
     else
         echo "失败！删除残留文件"
