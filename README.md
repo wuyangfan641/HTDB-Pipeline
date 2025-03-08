@@ -90,7 +90,7 @@ output_dir/
 ------
 
 ### 04 Structural annotation of the tick genome by EGAPx
-- genomes.rename.fa.masked
+- genome.rename.fa.masked
 - input_tick.yaml
 - egapx_0.3.2-alpha.sif
 - local_cache
@@ -142,7 +142,7 @@ python3 ./egapx/ui/egapx.py input_tick.yaml -e singularity -w anno -o egapx_outp
   ```
 
   ```bash
-echo "process.container = '/path_to_/egapx_0.3.2-alpha.sif'" >> egapx_config/biowulf_cluster.config
+echo "process.container = '/path_to_/egapx_0.3.2-alpha.sif'" >> egapx_config/singularity.config
   ```
 
   ```bash
