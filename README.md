@@ -135,10 +135,25 @@ Input to EGAPx is in the form of a YAML file. The following are the _required_ k
   taxid: NCBI Taxonomy identifier of the target organism 
   reads: RNA-seq data
   ```
-
+  ```
+genome: https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/020/809/275/GCA_020809275.1_ASM2080927v1/GCA_020809275.1_ASM2080927v1_genomic.fna.gz
+taxid: 6954
+reads:
+  - https://ftp.ncbi.nlm.nih.gov/genomes/TOOLS/EGAP/sample_data/Dermatophagoides_farinae_small/SRR8506572.1
+  - https://ftp.ncbi.nlm.nih.gov/genomes/TOOLS/EGAP/sample_data/Dermatophagoides_farinae_small/SRR8506572.2
+  - https://ftp.ncbi.nlm.nih.gov/genomes/TOOLS/EGAP/sample_data/Dermatophagoides_farinae_small/SRR9005248.1
+  - https://ftp.ncbi.nlm.nih.gov/genomes/TOOLS/EGAP/sample_data/Dermatophagoides_farinae_small/SRR9005248.2
+annotation_provider: GenBank submitter
+annotation_name_prefix: GCA_020809275.1
+locus_tag_prefix: egapxtmp
+  ```
 Run EGAPx:
   ```bash
 python3 ./egapx/ui/egapx.py input_tick.yaml -e singularity -w anno -o egapx_output -lc ./egapx/local_cache
+  ```
+
+  ```bash
+echo "process.container = '/path_to_/egapx_0.3.2-alpha.sif'" >> egapx_config/biowulf_cluster.config
   ```
 
   ```bash
