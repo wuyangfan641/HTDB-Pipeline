@@ -27,7 +27,7 @@ while IFS=$' \t' read -r species url || [[ -n "$species" ]]; do
     # 提取文件名并处理扩展名
     filename=$(basename "$url")
     if [[ "$filename" == *.* ]]; then
-        extension=".${filename#*.}"
+        extension="${filename: -7}"
         new_name="${species}${extension}"
     else
         new_name="$species"
