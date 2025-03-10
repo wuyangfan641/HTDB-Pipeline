@@ -1,4 +1,4 @@
-# IxodoideaDB-annotation-pipeline
+# HTDB-annotation-pipeline
 
 ### 01 Prerequisites
 #### 1.1 Software
