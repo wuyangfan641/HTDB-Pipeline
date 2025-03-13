@@ -3,6 +3,7 @@ import ftplib
 import re
 import os
 import sys
+import subprocess
 from urllib.parse import urlparse
 from urllib.request import urlretrieve
 
@@ -54,8 +55,9 @@ def get_latest_fna_url(ftp, gca):
             return f"ftp://ftp.ncbi.nlm.nih.gov{full_path}/{fname}"
     return None
 
+
 def download_file(url, species):
-    """下载文件并重命名"""
+    """使用wget下载文件并重命名"""
     # 清理物种名中的特殊字符
     species_clean = species.replace(' ', '_').replace('/', '_').strip()
     parsed = urlparse(url)
@@ -63,13 +65,30 @@ def download_file(url, species):
     ext = '.fna.gz' if filename.endswith('.fna.gz') else ''
     output_name = f"{species_clean}{ext}"
 
+    # 构造wget命令
+    wget_cmd = [
+        'wget',
+        '--show-progress',  # 显示进度条
+        '-O', output_name,  # 指定输出文件名
+        url
+    ]
+
     try:
-        print(f"下载 {species} -> {output_name}...")
-        urlretrieve(url, output_name)
+        print(f"下载 {species} -> {output_name}")
+        result = subprocess.run(
+            wget_cmd,
+            check=True,  # 检查命令执行状态
+            stderr=subprocess.STDOUT  # 捕获错误输出
+        )
         print(f"成功: {output_name}")
         return True
+    except subprocess.CalledProcessError as e:
+        print(f"下载失败 (状态码 {e.returncode}): {e.output.decode()}")
+        if os.path.exists(output_name):
+            os.remove(output_name)
+        return False
     except Exception as e:
-        print(f"下载失败: {e}")
+        print(f"未知错误: {str(e)}")
         if os.path.exists(output_name):
             os.remove(output_name)
         return False
