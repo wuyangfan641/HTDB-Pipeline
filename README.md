@@ -67,7 +67,7 @@ By default, the output folder will have a tab-delimited file `quality_report.tsv
 
 You got a genome and you want to get a high-quality TE annotation:
 ```bash
-perl EDTA.pl --genome ../tickdb/genome.fna --step all --overwrite 1 -t 12 --sensitive 1 --anno 1 --force 1 evaluate 1
+perl EDTA.pl --genome ../tickdb/genome.fna --step all --overwrite 1 -t 12 --sensitive 1 --anno 1 --force 1 --evaluate 1
 ```
 Convert hard masking into soft masking:
 ```bash
