@@ -1,5 +1,5 @@
 # HTDB-annotation-pipeline
-> ***HTDB:A near-comprehensive multi-omics HardTick database anchored to reference genomes from NCBI***
+> ***Title: A near-comprehensive multi-omics HardTick database anchored to reference genomes from NCBI***
 >  
 > ***By Yangfan Wu***
 > 
