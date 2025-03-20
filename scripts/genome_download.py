@@ -68,6 +68,7 @@ def download_file(url, species):
     # 构造wget命令
     wget_cmd = [
         'wget',
+        '-c',
         '--show-progress',  # 显示进度条
         '-O', output_name,  # 指定输出文件名
         url
