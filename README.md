@@ -1,7 +1,7 @@
 # HTDB-annotation-pipeline
 > ***Title: A near-comprehensive multi-omics HardTick database anchored to reference genomes from NCBI***
 >  
-> ***By Yangfan Wu***
+> ***Author: By Yangfan Wu***
 > 
 > ***Institution: Wanna Medical College***
 >
