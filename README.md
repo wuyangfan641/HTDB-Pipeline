@@ -107,7 +107,7 @@ output_dir/
 
 Create a environment called egapx:
 ```bash
-mamba create -n egapx -c bioconda python pyyaml nextflow
+mamba create -n egapx -c bioconda python pyyaml nextflow singularity
 mamba activate egapx
 ```
 
