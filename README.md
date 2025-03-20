@@ -1,4 +1,11 @@
 # HTDB-annotation-pipeline
+> ***By Yangfan Wu***
+> 
+> ***Institution:Wanna Medical College***
+>
+> ***Email:602542473@qq.com***
+>
+------
 
 ### 01 Prerequisites
 #### 1.1 Software
@@ -368,6 +375,9 @@ some details about loVis4u:
     Path to a configuration file or name of a pre-made config file
     [default: standard]
 ```
+The LoVis4u tool provides a fast and automated genomic visualization solution by combining a command-line interface and Python API. 
+
+------
 ### 07 Automated annotation of Tick-Borne Virus Genomes by geNomad
 - genome.fna
 - genomad_db
