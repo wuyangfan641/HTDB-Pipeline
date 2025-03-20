@@ -5,7 +5,7 @@
 > 
 > ***Institution: Wanna Medical College***
 >
-> ***Email: 602542473@qq.com***
+> ***Official Accounts: https://mp.weixin.qq.com/s/Z3QQj62cOeFPlakYFNO1Eg***
 >
 > ***Contact us: http://www.waspomics.com/team/***
 ------
