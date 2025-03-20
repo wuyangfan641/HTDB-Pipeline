@@ -1,9 +1,9 @@
 # HTDB-annotation-pipeline
 > ***Title: A near-comprehensive multi-omics HardTick database anchored to reference genomes from NCBI***
 >  
-> ***Author: By Yangfan Wu***
+> ***By Yangfan Wu***
 > 
-> ***Institution: Wanna Medical College***
+> ***Institution: Wannan Medical College***
 >
 > ***Official accounts: https://mp.weixin.qq.com/s/Z3QQj62cOeFPlakYFNO1Eg***
 >
@@ -148,7 +148,7 @@ Input to EGAPx is in the form of a YAML file. The following are the _required_ k
   genome: path to assembled genome in FASTA format
   taxid: NCBI Taxonomy identifier of the target organism 
   reads: RNA-seq data
-  annotation_provider: GenBank submitter
+  annotation_provider: Yf
   locus_tag_prefix: egapxtmp
   ```
   ```
