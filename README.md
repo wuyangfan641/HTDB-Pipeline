@@ -19,6 +19,7 @@
 + egapx (https://github.com/ncbi/egapx)
 + Bakta (https://github.com/oschwengers/bakta)
 + geNomad (https://github.com/apcamargo/genomad)
++ LoVis4u (https://github.com/art-egorov/lovis4u)
 
 
 #### 1.2 Database
