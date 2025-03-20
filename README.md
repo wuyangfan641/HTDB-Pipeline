@@ -144,6 +144,8 @@ Input to EGAPx is in the form of a YAML file. The following are the _required_ k
   genome: path to assembled genome in FASTA format
   taxid: NCBI Taxonomy identifier of the target organism 
   reads: RNA-seq data
+  annotation_provider: GenBank submitter
+  locus_tag_prefix: egapxtmp
   ```
   ```
 genome: https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/020/809/275/GCA_020809275.1_ASM2080927v1/GCA_020809275.1_ASM2080927v1_genomic.fna
