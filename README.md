@@ -1,9 +1,11 @@
 # HTDB-annotation-pipeline
+> ***HTDB:A near-comprehensive multi-omics HardTick database anchored to reference genomes from NCBI***
+>  
 > ***By Yangfan Wu***
 > 
-> ***Institution:Wanna Medical College***
+> ***Institution: Wanna Medical College***
 >
-> ***Email:602542473@qq.com***
+> ***Email: 602542473@qq.com***
 >
 ------
 
