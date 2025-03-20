@@ -7,6 +7,7 @@
 >
 > ***Email: 602542473@qq.com***
 >
+> ***Contact us: http://www.waspomics.com/team/***
 ------
 
 ### 01 Prerequisites
