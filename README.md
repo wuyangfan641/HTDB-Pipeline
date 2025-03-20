@@ -28,7 +28,7 @@
 + genomad_db (https://zenodo.org/records/14886553/files/genomad_db_v1.9.tar.gz?download=1)
 + checkm2_database (https://zenodo.org/api/files/fd3bc532-cd84-4907-b078-2e05a1e46803/checkm2_database.tar.gz)
 
-#### 1.3 Reference genome
+#### 1.3 Data for analysis
 + genome (https://www.ncbi.nlm.nih.gov/datasets/genome/)
 + transcript (https://www.ncbi.nlm.nih.gov/sra/)
 ------
