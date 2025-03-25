@@ -1,4 +1,4 @@
-# HTDB-annotation-pipeline
+# HTDB-Pipeline
 > ***Title: A near-comprehensive multi-omics HardTick database anchored to reference genomes from NCBI***
 >  
 > ***By Yangfan Wu***
@@ -104,7 +104,7 @@ output_dir/
 ------
 
 ### 04 Structural annotation of the tick genome by EGAPx
-- genome.rename.fa.masked
+- genome.fa.masked
 - input_tick.yaml
 - egapx_0.3.2-alpha.sif
 - local_cache
