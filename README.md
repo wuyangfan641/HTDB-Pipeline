@@ -23,7 +23,7 @@
 
 
 #### 1.2 Database
-+ arachnida_odb10 (https://busco-data.ezlab.org/v5/data/lineages/arachnida_odb10.2024-01-08.tar.gz)
++ arachnida_odb12 (https://busco-data.ezlab.org/v5/data/lineages/arachnida_odb12.2025-02-25.tar.gz)
 + db-light (https://zenodo.org/record/7669534/files/db-light.tar.gz?download=1)
 + genomad_db (https://zenodo.org/records/14886553/files/genomad_db_v1.9.tar.gz?download=1)
 + checkm2_database (https://zenodo.org/api/files/fd3bc532-cd84-4907-b078-2e05a1e46803/checkm2_database.tar.gz)
@@ -34,20 +34,20 @@
 ------
 
 ### 02 Genome assessment
-#### 2.1 BUSCO v5.6.0
+#### 2.1 BUSCO v5.8.3
 - genome.fna
-- arachnida_odb10
+- arachnida_odb12
 
 ```shell
-busco -i ./tickdb/genome.fna -l ./arachnida_odb10 -o ./busco_output -m genome --cpu 12 --offline
+busco -i ./tickdb/genome.fna -l /home/yf/arachnida_odb10 -o ./busco_output -m genome --cpu 12 --offline
 ```
 ```bash
-cat ./busco_output/short_summary.specific.arachnida_odb10.out.txt
+cat ./busco_output/short_summary.specific.arachnida_odb12.out.txt
 ```
 or you can try compleasm, a faster and more accurate reimplementation of BUSCO
 #### 2.2 compleasm
 ```bash
-python compleasm.py run -t 16 -l arachnida -L ./arachnida_odb10 -a genome.fna -o compleasm_output
+python compleasm.py run -t 16 -l arachnida -L ./arachnida_odb12 -a genome.fna -o compleasm_output
 ```
 Note: the organization of the lineage file downloaded by compleasm is different from that of BUSCO.
 
@@ -71,7 +71,7 @@ By default, the output folder will have a tab-delimited file `quality_report.tsv
 
 You got a genome and you want to get a high-quality TE annotation:
 ```bash
-perl EDTA.pl --genome ../tickdb/genome.fna --step all --overwrite 1 -t 12 --sensitive 1 --anno 1 --force 1 --evaluate 1
+perl EDTA.pl --genome ../tickdb/genome.fna --overwrite 1 -t 12 --sensitive 1 --anno 1 --force 1 --evaluate 1
 ```
 Convert hard masking into soft masking:
 ```bash
@@ -111,7 +111,7 @@ output_dir/
 
 Create a environment called egapx:
 ```bash
-mamba create -n egapx -c bioconda python pyyaml nextflow singularity
+mamba create -n egapx -c bioconda python pyyaml nextflow singularity -y
 mamba activate egapx
 ```
 
@@ -149,6 +149,7 @@ Input to EGAPx is in the form of a YAML file. The following are the _required_ k
   taxid: NCBI Taxonomy identifier of the target organism 
   reads: RNA-seq data
   annotation_provider: Yf
+  annotation_name_prefix: organise name
   locus_tag_prefix: egapxtmp
   ```
   ```
