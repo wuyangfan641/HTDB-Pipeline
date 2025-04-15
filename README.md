@@ -39,7 +39,7 @@
 - arachnida_odb12
 
 ```shell
-busco -i ./tickdb/genome.fna -l /home/yf/arachnida_odb10 -o ./busco_output -m genome --cpu 12 --offline
+busco -i ./tickdb/genome.fna -l /home/yf/arachnida_odb12 -o ./busco_output -m geno --cpu 12 --offline
 ```
 ```bash
 cat ./busco_output/short_summary.specific.arachnida_odb12.out.txt
